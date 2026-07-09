@@ -1,10 +1,25 @@
-const toTopBtn = document.getElementById("toTopBtn");
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".side-nav a");
 
-if (toTopBtn) {
-  toTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+function setActiveNav() {
+  let currentId = "home";
+
+  sections.forEach((section) => {
+    const top = section.offsetTop - 120;
+    if (window.scrollY >= top) {
+      currentId = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    const dot = link.querySelector(".dot");
+    if (link.getAttribute("href") === `#${currentId}`) {
+      dot.classList.add("active-dot");
+    } else {
+      dot.classList.remove("active-dot");
+    }
   });
 }
+
+window.addEventListener("scroll", setActiveNav);
+window.addEventListener("load", setActiveNav);
