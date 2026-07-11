@@ -1,0 +1,86 @@
+{
+  "site": {
+    "name": "EUJOO",
+    "url": "https://euijoo.github.io/euijoo.com",
+    "language": "ko",
+    "timezone": "Asia/Seoul",
+    "version": "1.0.0"
+  },
+
+  "branding": {
+    "logo": "EUJOO",
+    "tagline": "Living quietly, making images.",
+    "description": "Editorial portfolio documenting photography, filmmaking, design and writing.",
+    "copyright": "© 2026 EUJOO. All rights reserved."
+  },
+
+  "hero": {
+    "title": "Living quietly,\nmaking images.",
+    "subtitle": "Photography · Film · Design",
+    "description": "A curated archive of photographs, films, design projects and journal entries documenting everyday moments.",
+    "image": "assets/images/hero/hero.jpg",
+    "primaryButton": {
+      "label": "View Work",
+      "link": "work.html"
+    },
+    "secondaryButton": {
+      "label": "Journal",
+      "link": "journal.html"
+    }
+  },
+
+  "featured": {
+    "project": "morning-walk",
+    "journal": "first-story"
+  },
+
+  "navigation": [
+    {
+      "label": "Work",
+      "url": "work.html"
+    },
+    {
+      "label": "Journal",
+      "url": "journal.html"
+    },
+    {
+      "label": "About",
+      "url": "about.html"
+    },
+    {
+      "label": "Contact",
+      "url": "contact.html"
+    }
+  ],
+
+  "social": {
+    "instagram": "",
+    "youtube": "",
+    "vimeo": "",
+    "github": "https://github.com/euijoo",
+    "email": ""
+  },
+
+  "seo": {
+    "title": "EUJOO",
+    "description": "Editorial portfolio of photographer, filmmaker and designer Euijoo.",
+    "keywords": [
+      "photography",
+      "photographer",
+      "filmmaker",
+      "design",
+      "portfolio",
+      "editorial",
+      "journal"
+    ],
+    "themeColor": "#F6F3EF",
+    "ogImage": "assets/images/hero/hero.jpg"
+  },
+
+  "settings": {
+    "darkMode": true,
+    "animations": true,
+    "lazyLoading": true,
+    "smoothScroll": true
+  }
+}
