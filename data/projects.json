@@ -11,7 +11,12 @@
     "alt": "Featured editorial archive cover",
     "url": "project/index.html",
     "cta": "Open story",
-    "featured": true
+    "featured": true,
+    "role": "Creative Direction, Design, Development",
+    "format": "Web / Moving Image / Writing",
+    "scope": "Research, Structure, Interface, Archive System",
+    "credits": "Euijoo — concept, design, development",
+    "tools": "HTML, CSS, JavaScript, Archive System"
   },
   {
     "title": "Streaming interfaces and visual pacing.",
