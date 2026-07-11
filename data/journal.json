@@ -2,29 +2,67 @@
   {
     "title": "On building a portfolio that reads like a publication.",
     "dateLabel": "July 2026",
+    "year": 2026,
     "type": "Essay",
+    "readingTime": "6 min read",
+    "tags": ["editorial", "portfolio", "archive", "structure"],
     "summary": "The archive needs pacing, hierarchy, and recurring formats more than visual noise.",
-    "url": "post/index.html"
+    "url": "post/index.html",
+    "cta": "Read entry"
   },
   {
     "title": "Travel images, contact sheets, and location-based memory.",
     "dateLabel": "June 2026",
+    "year": 2026,
     "type": "Travel",
+    "readingTime": "4 min read",
+    "tags": ["travel", "photography", "sequence", "memory"],
     "summary": "Not every image belongs in a gallery; some belong inside a sequence and a date.",
-    "url": "post/index.html"
+    "url": "post/index.html",
+    "cta": "Read entry"
   },
   {
     "title": "Working notes from interface experiments and visual edits.",
     "dateLabel": "May 2026",
+    "year": 2026,
     "type": "Process",
+    "readingTime": "5 min read",
+    "tags": ["process", "ui", "editing", "worklog"],
     "summary": "Process logs can be concise and still feel composed when the system is consistent.",
-    "url": "post/index.html"
+    "url": "post/index.html",
+    "cta": "Read entry"
   },
   {
     "title": "Why a slower archive matters more than a fast feed.",
     "dateLabel": "April 2026",
+    "year": 2026,
     "type": "Note",
+    "readingTime": "3 min read",
+    "tags": ["archive", "daily", "notes", "rhythm"],
     "summary": "A personal archive can connect fragments that would disappear inside a timeline.",
-    "url": "post/index.html"
+    "url": "post/index.html",
+    "cta": "Read entry"
+  },
+  {
+    "title": "Field notes from Bangkok: streets, signs, pacing.",
+    "dateLabel": "October 2025",
+    "year": 2025,
+    "type": "Travel",
+    "readingTime": "7 min read",
+    "tags": ["bangkok", "travel", "field-notes", "visual"],
+    "summary": "A travel log can work as both a personal record and a visual research document.",
+    "url": "post/index.html",
+    "cta": "Read entry"
+  },
+  {
+    "title": "Editing fragments into a usable process archive.",
+    "dateLabel": "February 2024",
+    "year": 2024,
+    "type": "Process",
+    "readingTime": "5 min read",
+    "tags": ["process", "archive", "editing", "workflow"],
+    "summary": "The challenge is not saving everything, but arranging fragments so they stay legible later.",
+    "url": "post/index.html",
+    "cta": "Read entry"
   }
 ]
