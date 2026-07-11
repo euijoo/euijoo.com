@@ -10,13 +10,11 @@
     "title": "A lead story, not a thumbnail.",
     "description": "The first entry point should feel like the opening spread of a magazine: one selected narrative, enough space to read, and one clear path inward."
   },
-  "about": {
-    "preview": [
-      "Euijoo is a developer and creative practitioner based in Seoul, building digital projects across web, media, interface, image, and writing.",
-      "The site is designed as an editorial archive rather than a portfolio wall, so the work can be arranged by story, medium, sequence, and time."
-    ]
-  },
-  "contact": {
+  "aboutPreview": [
+    "Euijoo is a developer and creative practitioner based in Seoul, building digital projects across web, media, interface, image, and writing.",
+    "The site is designed as an editorial archive rather than a portfolio wall, so the work can be arranged by story, medium, sequence, and time."
+  ],
+  "contactPreview": {
     "heading": "For commissions, collaborations, and conversations.",
     "description": "Keep the contact area short and calm. One or two reliable paths are enough when the rest of the site already explains the tone of the work.",
     "links": [
@@ -32,6 +30,79 @@
         "label": "Open contact page",
         "href": "contact.html"
       }
+    ]
+  },
+  "aboutPage": {
+    "eyebrow": "About the Archive",
+    "title": "Work, memory, and process in one editorial system.",
+    "description": "This site is not built as a portfolio wall. It is an archive for projects, photographs, moving image, writing, travel, daily fragments, and the notes that connect them.",
+    "profile": {
+      "name": "Euijoo",
+      "base": "Seoul, KR",
+      "practice": "Web, image, moving image, writing"
+    },
+    "sections": [
+      {
+        "title": "A practice shaped by making and arranging.",
+        "paragraphs": [
+          "I work across web development, interface design, image-making, media editing, and writing. Rather than separating these into isolated categories, I think of them as connected forms of editorial work.",
+          "Some projects become websites. Some become moving images, notes, or image sequences. What matters most is how they are framed, read, remembered, and revisited over time."
+        ]
+      },
+      {
+        "title": "Why archive instead of portfolio.",
+        "paragraphs": [
+          "A traditional portfolio often privileges finished outcomes. An archive makes room for process, fragments, unfinished observations, and work that gains meaning through adjacency.",
+          "Here, a travel note can sit beside a design study, and a journal entry can resonate with a later project. The structure is intended to preserve those connections instead of flattening them."
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "number": "01",
+        "title": "Projects",
+        "description": "Case-study pages for design, web, interface, and moving-image work."
+      },
+      {
+        "number": "02",
+        "title": "Journal",
+        "description": "Essays, notes, travel logs, process records, and short reflections."
+      },
+      {
+        "number": "03",
+        "title": "Archive",
+        "description": "Images, tags, dates, media, and sequences that stay searchable over time."
+      }
+    ],
+    "principles": [
+      "Structure before decoration.",
+      "Reading experience over feed logic.",
+      "Consistent systems with room for variation.",
+      "Documentation as part of authorship."
+    ]
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "For commissions, collaborations, and conversations.",
+    "description": "The best contact page is clear, calm, and easy to use. A few reliable paths are enough.",
+    "links": [
+      {
+        "label": "hello@euijoo.com",
+        "href": "mailto:hello@euijoo.com"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/"
+      }
+    ],
+    "notes": [
+      "Available for selected digital, editorial, and archive-oriented projects.",
+      "Please include a short outline, timeline, and relevant context when reaching out.",
+      "Based in Seoul, open to remote collaboration."
     ]
   }
 }
