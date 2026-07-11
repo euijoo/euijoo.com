@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal Entry — euijoo</title>
+  <meta name="description" content="Journal entry from the editorial archive." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body data-page="post-detail">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="euijoo home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span id="site-brand-text">euijoo archive</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#featured">Stories</a>
+        <a href="../work.html">Archive</a>
+        <a href="../journal.html">Journal</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <span class="eyebrow" id="post-type">Essay</span>
+        <h1 id="post-title">Journal title.</h1>
+        <p class="page-intro-copy" id="post-deck">
+          A short deck introducing the journal entry.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="post-body" style="max-width: 68ch; display: grid; gap: var(--space-4);">
+          <p>Journal body will be rendered from JSON.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p id="footer-brand">euijoo archive</p>
+      <p id="footer-tagline">Editorial Portfolio + Personal Archive</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

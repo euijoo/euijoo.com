@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>euijoo — archive</title>
+  <meta name="description" content="A personal editorial archive for images, film, writing, travel, and daily work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="euijoo home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span id="site-brand-text">euijoo archive</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#featured" aria-current="page">Stories</a>
+        <a href="work.html">Archive</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container page-intro-grid">
+        <div>
+          <span class="eyebrow" id="hero-eyebrow">Editorial Archive</span>
+          <h1 id="hero-title">A place for images, film, writing, travel, and daily work.</h1>
+        </div>
+        <p class="page-intro-copy" id="hero-description">
+          This site collects personal work and fragments: photographs, moving image, design experiments, notes, and travel records. It is built to be read slowly.
+        </p>
+      </div>
+    </section>
+
+    <section class="home-featured" id="featured">
+      <div class="container home-featured-grid">
+        <div>
+          <span class="section-label" id="featured-section-title">Featured Story</span>
+          <div class="home-featured-meta" id="featured-meta">Photo / Series / Seoul</div>
+          <h2 class="home-featured-title" id="featured-title">Late trains and soft light along the Han river.</h2>
+          <p class="home-featured-summary" id="featured-summary">
+            A small series of images and notes from evening walks along the river, watching light, movement, and people passing.
+          </p>
+          <a class="home-featured-link" id="featured-link" href="project/index.html">Open story</a>
+        </div>
+        <div class="home-featured-media" id="featured-media"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container home-grid">
+        <div>
+          <h2>Selected entries</h2>
+          <div id="works-grid" class="archive-card-grid"></div>
+        </div>
+        <div>
+          <h2>Latest journal</h2>
+          <div id="journal-list" class="journal-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container home-grid">
+        <div>
+          <h2>About this archive</h2>
+          <p id="about-preview-text-1">
+            This is a personal editorial space, built to hold work from different mediums together: image, motion, design, writing, and process.
+          </p>
+          <p id="about-preview-text-2">
+            Entries are arranged by story and sequence rather than by category alone, so that connections between places, times, and interests stay visible.
+          </p>
+        </div>
+        <div>
+          <h2 id="contact-heading">Contact</h2>
+          <p id="contact-description">For commissions, collaborations, and conversations.</p>
+          <div id="contact-links" class="journal-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p id="footer-brand">euijoo archive</p>
+      <p id="footer-tagline">Editorial Portfolio + Personal Archive</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

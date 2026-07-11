@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "han-river-evenings",
+    "title": "Han river evenings — soft light and quiet trains.",
+    "type": "Photo",
+    "category": "Series",
+    "location": "Seoul",
+    "year": 2026,
+    "tags": [
+      "river",
+      "evening",
+      "train",
+      "blue"
+    ],
+    "summary": "A small series of images from evening walks along the Han river, watching light shift over trains, bridges, and water.",
+    "cover": "https://picsum.photos/seed/han-river-cover/1200/1400",
+    "alt": "Han river evening series cover",
+    "url": "project/index.html?slug=han-river-evenings",
+    "cta": "Open story",
+    "featured": true,
+    "heroImage": "https://picsum.photos/seed/han-river-hero/1600/1000",
+    "body": [
+      "Light changes quickly at the river. Trains cut across the frame, bridges hold the horizon, and people drift in and out of view.",
+      "This entry collects a short sequence of images and notes from those evenings, kept together as one quiet story."
+    ]
+  },
+  {
+    "slug": "kitchen-window-mornings",
+    "title": "Kitchen window mornings.",
+    "type": "Photo",
+    "category": "Series",
+    "location": "Seoul",
+    "year": 2026,
+    "tags": [
+      "window",
+      "morning",
+      "coffee",
+      "routine"
+    ],
+    "summary": "Photographs and notes from mornings spent near the kitchen window: steam, plants, coffee, and passing weather.",
+    "cover": "https://picsum.photos/seed/kitchen-window/1200/1400",
+    "alt": "Kitchen window morning series cover",
+    "url": "project/index.html?slug=kitchen-window-mornings",
+    "cta": "Open story"
+  }
+]

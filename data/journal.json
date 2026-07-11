@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "on-slow-archives",
+    "title": "On keeping a slow archive.",
+    "dateLabel": "July 2026",
+    "year": 2026,
+    "type": "Essay",
+    "readingTime": "5 min read",
+    "tags": [
+      "archive",
+      "notes",
+      "process"
+    ],
+    "summary": "A short essay about arranging images, film, and writing into an editorial space instead of a feed.",
+    "url": "post/index.html?slug=on-slow-archives",
+    "cta": "Read entry",
+    "deck": "Why some things are better kept in a structure than in a stream.",
+    "body": [
+      "Feeds are fast. Archives are slower.",
+      "This journal entry is a note on why personal work benefits from being arranged, revisited, and read in context, rather than simply posted and pushed away."
+    ]
+  },
+  {
+    "slug": "notes-from-a-rainy-day",
+    "title": "Notes from a rainy day.",
+    "dateLabel": "June 2026",
+    "year": 2026,
+    "type": "Note",
+    "readingTime": "2 min read",
+    "tags": [
+      "rain",
+      "daily",
+      "seoul"
+    ],
+    "summary": "A short note about sound, streets, and windows on a day when the city felt slightly slower.",
+    "url": "post/index.html?slug=notes-from-a-rainy-day",
+    "cta": "Read entry",
+    "body": [
+      "On some days, the city is defined by the sound of rain rather than traffic.",
+      "This note keeps a small record of that feeling."
+    ]
+  }
+]

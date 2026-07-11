@@ -1,0 +1,27 @@
+{
+  "brand": "euijoo archive",
+  "tagline": "Editorial Portfolio + Personal Archive",
+  "hero": {
+    "eyebrow": "Editorial Archive",
+    "title": "A place for images, film, writing, travel, and daily work.",
+    "description": "This site collects personal work and fragments: photographs, moving image, design experiments, notes, and travel records. It is built to be read slowly."
+  },
+  "featuredSection": {
+    "title": "Featured Story",
+    "description": "One selected entry at a time sets the pace for the archive."
+  },
+  "contactPreview": {
+    "heading": "Contact",
+    "description": "For commissions, collaborations, and conversations.",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:hello@euijoo.com"
+      },
+      {
+        "label": "About the archive",
+        "href": "about.html"
+      }
+    ]
+  }
+}
