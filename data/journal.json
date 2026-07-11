@@ -1,0 +1,30 @@
+[
+  {
+    "title": "On building a portfolio that reads like a publication.",
+    "dateLabel": "July 2026",
+    "type": "Essay",
+    "summary": "The archive needs pacing, hierarchy, and recurring formats more than visual noise.",
+    "url": "post/index.html"
+  },
+  {
+    "title": "Travel images, contact sheets, and location-based memory.",
+    "dateLabel": "June 2026",
+    "type": "Travel",
+    "summary": "Not every image belongs in a gallery; some belong inside a sequence and a date.",
+    "url": "post/index.html"
+  },
+  {
+    "title": "Working notes from interface experiments and visual edits.",
+    "dateLabel": "May 2026",
+    "type": "Process",
+    "summary": "Process logs can be concise and still feel composed when the system is consistent.",
+    "url": "post/index.html"
+  },
+  {
+    "title": "Why a slower archive matters more than a fast feed.",
+    "dateLabel": "April 2026",
+    "type": "Note",
+    "summary": "A personal archive can connect fragments that would disappear inside a timeline.",
+    "url": "post/index.html"
+  }
+]
