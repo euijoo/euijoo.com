@@ -784,4 +784,256 @@ h1 {
   }
 }
 
+.project-hero {
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(2rem, 5vw, 3rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: var(--space-12);
+  align-items: end;
+  margin-bottom: var(--space-10);
+}
+
+.project-hero h1 {
+  max-width: 10ch;
+  font-size: clamp(2.5rem, 1.6rem + 3vw, 5.2rem);
+}
+
+.project-lede-wrap {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.project-lede {
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: var(--text-lg);
+}
+
+.project-meta-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-6);
+}
+
+.project-meta-list dt,
+.project-fact span {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-meta-list dd {
+  margin: 0.4rem 0 0;
+}
+
+.project-hero-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--bg-soft);
+}
+
+.project-body-grid {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.project-sidebar {
+  position: sticky;
+  top: 100px;
+  display: grid;
+  gap: var(--space-8);
+}
+
+.project-sidebar-block {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.project-outline {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
+}
+
+.project-outline a {
+  color: var(--muted);
+}
+
+.project-outline a:hover,
+.project-outline a:focus-visible {
+  color: var(--text);
+}
+
+.project-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.project-tag-list span {
+  font-size: var(--text-xs);
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-article {
+  display: grid;
+  gap: var(--space-20);
+  min-width: 0;
+}
+
+.project-section {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.project-section-heading {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.project-section-heading h2 {
+  font-size: clamp(1.8rem, 1.3rem + 1vw, 2.8rem);
+}
+
+.project-prose {
+  max-width: 68ch;
+  display: grid;
+  gap: var(--space-4);
+  color: var(--text);
+}
+
+.project-prose p {
+  color: var(--muted);
+}
+
+.project-facts-grid,
+.project-credits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.project-credits-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-fact {
+  border-top: 1px solid var(--text);
+  padding-top: var(--space-3);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.project-fact strong {
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.project-process-list {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.project-process-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--line);
+}
+
+.project-process-step {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.25rem;
+}
+
+.project-process-item h3 {
+  font-size: var(--text-lg);
+  margin-bottom: 0.45rem;
+}
+
+.project-process-item p {
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.project-figure {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.project-figure img {
+  width: 100%;
+  background: var(--bg-soft);
+  object-fit: cover;
+}
+
+.project-figure figcaption {
+  max-width: 58ch;
+  font-size: var(--text-sm);
+  color: var(--muted);
+}
+
+.project-figure-large img {
+  aspect-ratio: 16 / 10;
+}
+
+.project-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.project-pullquote {
+  max-width: 48ch;
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-pullquote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 1.25rem + 1vw, 2.5rem);
+  line-height: 1.12;
+}
+
+@media (max-width: 1024px) {
+  .project-hero-grid,
+  .project-body-grid,
+  .project-facts-grid,
+  .project-credits-grid,
+  .project-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .project-meta-list,
+  .project-process-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-lede {
+    font-size: var(--text-base);
+  }
+}
+
 
