@@ -8,7 +8,10 @@
     "tags": ["editorial", "portfolio", "archive", "structure"],
     "summary": "The archive needs pacing, hierarchy, and recurring formats more than visual noise.",
     "url": "post/index.html",
-    "cta": "Read entry"
+    "cta": "Read entry",
+    "heroImage": "https://picsum.photos/seed/euijoo-post-hero/1600/960",
+    "heroCaption": "A strong opening image can set tone, but the text remains the main event.",
+    "deck": "The archive needs pacing, hierarchy, and recurring formats more than visual noise. A journal page should feel calm enough to read and structured enough to revisit later."
   },
   {
     "title": "Travel images, contact sheets, and location-based memory.",
