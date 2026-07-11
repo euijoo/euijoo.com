@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive — euijoo</title>
+  <meta
+    name="description"
+    content="Browse the archive of projects, photographs, moving image, writing, and process."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="archive">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="euijoo home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M5 5h14v14H5z"></path>
+            <path d="M9 9h6v6H9z"></path>
+          </svg>
+        </span>
+        <span id="site-brand-text">euijoo archive</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#featured">Featured</a>
+        <a href="work.html" aria-current="page">Archive</a>
+        <a href="journal.html">Journal</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <div class="container page-intro-grid">
+        <div>
+          <span class="eyebrow">Archive Index</span>
+          <h1 id="archive-title">Works arranged by type, time, and context.</h1>
+        </div>
+
+        <p class="page-intro-copy" id="archive-description">
+          The archive brings together design, photography, moving image, writing,
+          travel, and process. It should be searchable like an index, but read with
+          the pace of an editorial sequence.
+        </p>
+      </div>
+    </section>
+
+    <section class="section archive-controls-section">
+      <div class="container">
+        <div class="section-heading archive-controls-heading">
+          <div class="section-label">Browse</div>
+          <div class="section-title-wrap">
+            <h2>Filter the archive without flattening it.</h2>
+            <p>
+              Categories help with access, but each entry should still keep its own
+              tone, format, and context.
+            </p>
+          </div>
+        </div>
+
+        <div class="archive-toolbar">
+          <div class="filter-group">
+            <label class="filter-label" for="filter-type">Type</label>
+            <select id="filter-type" class="filter-select">
+              <option value="all">All</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label" for="filter-year">Year</label>
+            <select id="filter-year" class="filter-select">
+              <option value="all">All</option>
+            </select>
+          </div>
+
+          <div class="filter-group filter-group-search">
+            <label class="filter-label" for="filter-search">Search</label>
+            <input
+              id="filter-search"
+              class="filter-input"
+              type="search"
+              placeholder="Title, category, tag"
+            />
+          </div>
+        </div>
+
+        <div class="tag-row" id="tag-row"></div>
+      </div>
+    </section>
+
+    <section class="section archive-results-section">
+      <div class="container">
+        <div class="archive-results-meta">
+          <p id="results-count">0 entries</p>
+        </div>
+
+        <div class="archive-index-grid" id="archive-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p id="footer-brand">euijoo archive</p>
+      <p id="footer-tagline">Editorial Portfolio + Personal Archive</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
