@@ -2,7 +2,8 @@ const state = {
   site: null,
   projects: [],
   journal: [],
-  activeTag: "all"
+  activeTag: "all",
+  activeJournalTag: "all"
 };
 
 function initTheme() {
@@ -35,6 +36,369 @@ function buildMeta(parts = []) {
   return parts.filter(Boolean).join(" / ");
 }
 
+function escapeHTML(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function renderGlobal(site) {
+  setText("site-brand-text", site.brand);
+  setText("footer-brand", site.brand);
+  setText("footer-tagline", site.tagline);
+}
+
+function renderHome(site, projects, journal) {
+  setText("hero-eyebrow", site.hero.eyebrow);
+  setText("hero-title", site.hero.title);
+  setText("hero-description", site.hero.description);
+
+  setText("featured-section-title", site.featuredSection.title);
+  setText("featured-section-description", site.featuredSection.description);
+
+  setText("about-preview-text-1", site.about.preview[0]);
+  setText("about-preview-text-2", site.about.preview[1]);
+
+  setText("contact-heading", site.contact.heading);
+  setText("contact-description", site.contact.description);
+
+  const contactLinks = document.getElementById("contact-links");
+  if (contactLinks) {
+    contactLinks.innerHTML = site.contact.links.map(link => {
+      const external = link.href.startsWith("http");
+      const target = external ? ' target="_blank" rel="noopener noreferrer"' : "";
+      return `<a href="${escapeHTML(link.href)}"${target}>${escapeHTML(link.label)}</a>`;
+    }).join("");
+  }
+
+  const featured = projects.find(item => item.featured) || projects[0];
+  if (featured) {
+    setText("featured-meta", buildMeta([featured.type, featured.category, featured.location]));
+    setText("featured-title", featured.title);
+    setText("featured-summary", featured.summary);
+
+    const featuredLink = document.getElementById("featured-link");
+    const featuredMedia = document.getElementById("featured-media");
+
+    if (featuredLink) {
+      featuredLink.textContent = featured.cta || "Open story";
+      featuredLink.href = featured.url || "project/index.html";
+    }
+
+    if (featuredMedia) {
+      featuredMedia.style.backgroundImage =
+        `linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.22)), url('${featured.cover}')`;
+    }
+  }
+
+  const worksGrid = document.getElementById("works-grid");
+  if (worksGrid) {
+    worksGrid.innerHTML = projects.slice(0, 3).map(item => `
+      <article class="archive-card">
+        <div class="archive-thumb">
+          <img
+            src="${escapeHTML(item.cover)}"
+            alt="${escapeHTML(item.alt || item.title)}"
+            width="900"
+            height="1100"
+            loading="lazy"
+          />
+        </div>
+        <div class="meta">${escapeHTML(buildMeta([item.type, item.category]))}</div>
+        <h3>${escapeHTML(item.title)}</h3>
+        <p>${escapeHTML(item.summary)}</p>
+      </article>
+    `).join("");
+  }
+
+  const journalList = document.getElementById("journal-list");
+  if (journalList) {
+    journalList.innerHTML = journal.slice(0, 3).map(item => `
+      <article class="journal-item">
+        <div class="journal-date">${escapeHTML(item.dateLabel)}</div>
+        <div>
+          <h3>${escapeHTML(item.title)}</h3>
+          <p>${escapeHTML(item.summary)}</p>
+        </div>
+        <div class="journal-type">${escapeHTML(item.type)}</div>
+      </article>
+    `).join("");
+  }
+
+  document.title = `${site.brand} — ${site.tagline}`;
+}
+
+function getUniqueValues(items, key) {
+  return [...new Set(items.map(item => item[key]).filter(Boolean))];
+}
+
+function getUniqueTags(items) {
+  return [...new Set(items.flatMap(item => item.tags || []))];
+}
+
+function populateSelect(selectId, values) {
+  const select = document.getElementById(selectId);
+  if (!select) return;
+
+  const existing = select.value || "all";
+  select.innerHTML = `<option value="all">All</option>` + values.map(value => {
+    return `<option value="${escapeHTML(String(value))}">${escapeHTML(String(value))}</option>`;
+  }).join("");
+  select.value = values.map(String).includes(String(existing)) ? String(existing) : "all";
+}
+
+function renderTagButtons(containerId, tags, activeTag, onClick) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = [
+    `<button class="tag-chip ${activeTag === "all" ? "is-active" : ""}" type="button" data-tag="all">All tags</button>`,
+    ...tags.map(tag => `
+      <button class="tag-chip ${activeTag === tag ? "is-active" : ""}" type="button" data-tag="${escapeHTML(tag)}">
+        ${escapeHTML(tag)}
+      </button>
+    `)
+  ].join("");
+
+  container.querySelectorAll("[data-tag]").forEach(button => {
+    button.addEventListener("click", () => {
+      onClick(button.dataset.tag || "all");
+    });
+  });
+}
+
+function filterProjects(projects) {
+  const type = document.getElementById("filter-type")?.value || "all";
+  const year = document.getElementById("filter-year")?.value || "all";
+  const search = (document.getElementById("filter-search")?.value || "").trim().toLowerCase();
+  const tag = state.activeTag;
+
+  return projects.filter(item => {
+    const matchesType = type === "all" || item.type === type;
+    const matchesYear = year === "all" || String(item.year) === String(year);
+    const matchesTag = tag === "all" || (item.tags || []).includes(tag);
+
+    const haystack = [
+      item.title,
+      item.category,
+      item.type,
+      item.location,
+      ...(item.tags || [])
+    ].join(" ").toLowerCase();
+
+    const matchesSearch = !search || haystack.includes(search);
+    return matchesType && matchesYear && matchesTag && matchesSearch;
+  });
+}
+
+function renderArchiveEntries(items) {
+  const grid = document.getElementById("archive-grid");
+  const count = document.getElementById("results-count");
+  if (!grid || !count) return;
+
+  count.textContent = `${items.length} ${items.length === 1 ? "entry" : "entries"}`;
+
+  if (!items.length) {
+    grid.innerHTML = `
+      <div class="empty-state">
+        <h3>No entries found.</h3>
+        <p>Try widening the filter, changing the search term, or clearing the active tag.</p>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = items.map(item => `
+    <article class="archive-entry">
+      <div class="archive-entry-media">
+        <img
+          src="${escapeHTML(item.cover)}"
+          alt="${escapeHTML(item.alt || item.title)}"
+          width="1200"
+          height="1500"
+          loading="lazy"
+        />
+      </div>
+
+      <div class="archive-entry-text">
+        <div class="meta">${escapeHTML(buildMeta([item.type, item.category, item.location]))}</div>
+
+        <div class="archive-entry-header">
+          <h2>${escapeHTML(item.title)}</h2>
+          <div class="archive-entry-year">${escapeHTML(String(item.year || ""))}</div>
+        </div>
+
+        <p class="archive-entry-summary">${escapeHTML(item.summary)}</p>
+
+        <div class="archive-entry-tags">
+          ${(item.tags || []).map(tag => `<span class="archive-entry-tag">${escapeHTML(tag)}</span>`).join("")}
+        </div>
+
+        <a class="archive-entry-link" href="${escapeHTML(item.url || 'project/index.html')}">
+          ${escapeHTML(item.cta || "Read project")}
+        </a>
+      </div>
+    </article>
+  `).join("");
+}
+
+function applyArchiveFilters() {
+  const filtered = filterProjects(state.projects);
+  renderArchiveEntries(filtered);
+}
+
+function renderArchive(site, projects) {
+  setText("archive-title", "Works arranged by type, time, and context.");
+  setText(
+    "archive-description",
+    "The archive brings together design, photography, moving image, writing, travel, and process. It should be searchable like an index, but read with the pace of an editorial sequence."
+  );
+
+  populateSelect("filter-type", getUniqueValues(projects, "type"));
+  populateSelect("filter-year", getUniqueValues(projects, "year").sort((a, b) => Number(b) - Number(a)));
+
+  renderTagButtons("tag-row", getUniqueTags(projects), state.activeTag, (tag) => {
+    state.activeTag = tag;
+    renderArchive(site, projects);
+  });
+
+  document.getElementById("filter-type")?.addEventListener("change", applyArchiveFilters);
+  document.getElementById("filter-year")?.addEventListener("change", applyArchiveFilters);
+  document.getElementById("filter-search")?.addEventListener("input", applyArchiveFilters);
+
+  applyArchiveFilters();
+  document.title = `Archive — ${site.brand}`;
+}
+
+function filterJournal(entries) {
+  const type = document.getElementById("journal-filter-type")?.value || "all";
+  const year = document.getElementById("journal-filter-year")?.value || "all";
+  const search = (document.getElementById("journal-filter-search")?.value || "").trim().toLowerCase();
+  const tag = state.activeJournalTag;
+
+  return entries.filter(item => {
+    const matchesType = type === "all" || item.type === type;
+    const matchesYear = year === "all" || String(item.year) === String(year);
+    const matchesTag = tag === "all" || (item.tags || []).includes(tag);
+
+    const haystack = [
+      item.title,
+      item.summary,
+      item.type,
+      ...(item.tags || [])
+    ].join(" ").toLowerCase();
+
+    const matchesSearch = !search || haystack.includes(search);
+    return matchesType && matchesYear && matchesTag && matchesSearch;
+  });
+}
+
+function renderJournalIndex(entries) {
+  const list = document.getElementById("journal-index-list");
+  const count = document.getElementById("journal-results-count");
+  if (!list || !count) return;
+
+  count.textContent = `${entries.length} ${entries.length === 1 ? "entry" : "entries"}`;
+
+  if (!entries.length) {
+    list.innerHTML = `
+      <div class="empty-state">
+        <h3>No journal entries found.</h3>
+        <p>Try changing the type, year, search term, or active tag.</p>
+      </div>
+    `;
+    return;
+  }
+
+  list.innerHTML = entries.map(item => `
+    <article class="journal-index-entry">
+      <div class="journal-index-date">${escapeHTML(item.dateLabel)}</div>
+
+      <div class="journal-index-main">
+        <div class="meta">${escapeHTML(buildMeta([item.type, item.readingTime]))}</div>
+        <h2>${escapeHTML(item.title)}</h2>
+        <p class="journal-index-summary">${escapeHTML(item.summary)}</p>
+        <div class="journal-index-tags">
+          ${(item.tags || []).map(tag => `<span class="journal-index-tag">${escapeHTML(tag)}</span>`).join("")}
+        </div>
+      </div>
+
+      <div class="journal-index-side">
+        <div class="journal-index-type">${escapeHTML(item.type)}</div>
+        <a class="journal-index-link" href="${escapeHTML(item.url || 'post/index.html')}">
+          ${escapeHTML(item.cta || "Read entry")}
+        </a>
+      </div>
+    </article>
+  `).join("");
+}
+
+function applyJournalFilters() {
+  const filtered = filterJournal(state.journal);
+  renderJournalIndex(filtered);
+}
+
+function renderJournalPage(site, journal) {
+  setText("journal-title", "Notes, essays, travel logs, and working records.");
+  setText(
+    "journal-description",
+    "Some entries are complete texts. Others are fragments, process notes, or location-based observations. The journal should hold all of them without forcing them into one tone."
+  );
+
+  populateSelect("journal-filter-type", getUniqueValues(journal, "type"));
+  populateSelect("journal-filter-year", getUniqueValues(journal, "year").sort((a, b) => Number(b) - Number(a)));
+
+  renderTagButtons("journal-tag-row", getUniqueTags(journal), state.activeJournalTag, (tag) => {
+    state.activeJournalTag = tag;
+    renderJournalPage(site, journal);
+  });
+
+  document.getElementById("journal-filter-type")?.addEventListener("change", applyJournalFilters);
+  document.getElementById("journal-filter-year")?.addEventListener("change", applyJournalFilters);
+  document.getElementById("journal-filter-search")?.addEventListener("input", applyJournalFilters);
+
+  applyJournalFilters();
+  document.title = `Journal — ${site.brand}`;
+}
+
+async function init() {
+  initTheme();
+
+  try {
+    const [site, projects, journal] = await Promise.all([
+      fetchJSON("data/site.json"),
+      fetchJSON("data/projects.json"),
+      fetchJSON("data/journal.json")
+    ]);
+
+    state.site = site;
+    state.projects = projects;
+    state.journal = journal;
+
+    renderGlobal(site);
+
+    const page = document.body.dataset.page;
+
+    if (page === "archive") {
+      renderArchive(site, projects);
+      return;
+    }
+
+    if (page === "journal") {
+      renderJournalPage(site, journal);
+      return;
+    }
+
+    renderHome(site, projects, journal);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+init();
 function escapeHTML(value = "") {
   return value
     .replaceAll("&", "&amp;")
