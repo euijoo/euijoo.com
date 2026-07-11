@@ -1,15 +1,50 @@
-{
-  "featured": "morning-walk",
-
-  "projects": [
-    {
-      "id": "morning-walk",
-      "title": "Morning Walk",
-      "category": "Photography",
-      "year": "2026",
-      "cover": "assets/images/projects/morning-walk/cover.jpg",
-      "url": "project/index.html?id=morning-walk"
-    }
-
-  ]
-}
+[
+  {
+    "title": "Building an archive from fragments of work and daily life.",
+    "type": "Project",
+    "category": "Film",
+    "location": "Seoul",
+    "summary": "A long-form project entry can hold images, embedded video, field notes, sketches, dates, locations, and process records together without turning everything into the same kind of post.",
+    "cover": "https://picsum.photos/seed/euijoo-archive-1/1200/1400",
+    "alt": "Featured editorial archive cover",
+    "url": "project/index.html",
+    "cta": "Open story",
+    "featured": true
+  },
+  {
+    "title": "Streaming interfaces and visual pacing.",
+    "type": "Design",
+    "category": "Interface",
+    "location": "Seoul",
+    "summary": "Digital product work presented with context, narrative, and visual rhythm instead of only screen captures.",
+    "cover": "https://picsum.photos/seed/euijoo-work-1/900/1100",
+    "alt": "Interface design project cover",
+    "url": "project/index.html",
+    "cta": "Read project",
+    "featured": false
+  },
+  {
+    "title": "Images gathered through movement and place.",
+    "type": "Photography",
+    "category": "Travel",
+    "location": "Japan",
+    "summary": "Travel and daily observation can live beside commissioned work when the archive is arranged by sequence and memory.",
+    "cover": "https://picsum.photos/seed/euijoo-work-2/900/1100",
+    "alt": "Travel photography project cover",
+    "url": "project/index.html",
+    "cta": "Read project",
+    "featured": false
+  },
+  {
+    "title": "Essays, captions, notes, and process records.",
+    "type": "Writing",
+    "category": "Archive",
+    "location": "Seoul",
+    "summary": "Short text and long text should share the same editorial system so that notes feel as intentional as finished projects.",
+    "cover": "https://picsum.photos/seed/euijoo-work-3/900/1100",
+    "alt": "Writing archive project cover",
+    "url": "project/index.html",
+    "cta": "Read project",
+    "featured": false
+  }
+]
