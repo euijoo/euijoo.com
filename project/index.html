@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — euijoo</title>
+  <meta
+    name="description"
+    content="Project detail page from the editorial archive."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body data-page="project-detail">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="euijoo home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M5 5h14v14H5z"></path>
+            <path d="M9 9h6v6H9z"></path>
+          </svg>
+        </span>
+        <span id="site-brand-text">euijoo archive</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#featured">Featured</a>
+        <a href="../work.html">Archive</a>
+        <a href="../journal.html">Journal</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"></circle>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M19.07 4.93l-2.12 2.12M7.05 16.95l-2.12 2.12"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <div class="container">
+        <div class="project-hero-grid">
+          <div>
+            <span class="eyebrow" id="project-eyebrow">Project Detail</span>
+            <h1 id="project-title">Building an archive from fragments of work and daily life.</h1>
+          </div>
+
+          <div class="project-lede-wrap">
+            <p class="project-lede" id="project-lede">
+              A long-form project entry can hold images, embedded video, field notes, sketches,
+              dates, locations, and process records together without flattening them into a single format.
+            </p>
+
+            <dl class="project-meta-list">
+              <div>
+                <dt>Type</dt>
+                <dd id="project-meta-type">Project</dd>
+              </div>
+              <div>
+                <dt>Category</dt>
+                <dd id="project-meta-category">Film</dd>
+              </div>
+              <div>
+                <dt>Year</dt>
+                <dd id="project-meta-year">2026</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd id="project-meta-location">Seoul</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="project-hero-media">
+          <img
+            id="project-hero-image"
+            src="https://picsum.photos/seed/euijoo-archive-hero/1600/1000"
+            alt="Project hero image"
+            width="1600"
+            height="1000"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container project-body-grid">
+        <aside class="project-sidebar">
+          <div class="project-sidebar-block">
+            <div class="section-label">Overview</div>
+            <ul class="project-outline">
+              <li><a href="#intro">Introduction</a></li>
+              <li><a href="#context">Context</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#media">Media</a></li>
+              <li><a href="#notes">Notes</a></li>
+              <li><a href="#credits">Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="project-sidebar-block">
+            <div class="section-label">Tags</div>
+            <div class="project-tag-list" id="project-tag-list"></div>
+          </div>
+        </aside>
+
+        <div class="project-article">
+          <section class="project-section" id="intro">
+            <div class="project-section-heading">
+              <div class="section-label">Introduction</div>
+              <h2>What this project holds.</h2>
+            </div>
+            <div class="project-prose" id="project-intro-text">
+              <p>
+                This page is designed as an editorial case study rather than a gallery dump.
+                It can hold still images, video frames, captions, field notes, process fragments, and reflective writing together.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-section" id="context">
+            <div class="project-section-heading">
+              <div class="section-label">Context</div>
+              <h2>Background, role, and direction.</h2>
+            </div>
+
+            <div class="project-facts-grid">
+              <div class="project-fact">
+                <span>Role</span>
+                <strong id="project-role">Creative Direction, Design, Development</strong>
+              </div>
+              <div class="project-fact">
+                <span>Format</span>
+                <strong id="project-format">Web / Moving Image / Writing</strong>
+              </div>
+              <div class="project-fact">
+                <span>Scope</span>
+                <strong id="project-scope">Research, Structure, Interface, Archive System</strong>
+              </div>
+            </div>
+
+            <div class="project-prose" id="project-context-text">
+              <p>
+                A case study should give just enough context for the reader to understand what the project is,
+                why it mattered, and what kind of decisions shaped the result.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-section" id="process">
+            <div class="project-section-heading">
+              <div class="section-label">Process</div>
+              <h2>How the work developed.</h2>
+            </div>
+
+            <div class="project-process-list" id="project-process-list">
+              <article class="project-process-item">
+                <div class="project-process-step">01</div>
+                <div>
+                  <h3>Structure before decoration.</h3>
+                  <p>
+                    The archive started from content types, relationships, and reading order before visual styling was finalized.
+                  </p>
+                </div>
+              </article>
+
+              <article class="project-process-item">
+                <div class="project-process-step">02</div>
+                <div>
+                  <h3>Editorial pacing.</h3>
+                  <p>
+                    Images, captions, text blocks, and metadata were arranged to slow the reader down and create rhythm.
+                  </p>
+                </div>
+              </article>
+
+              <article class="project-process-item">
+                <div class="project-process-step">03</div>
+                <div>
+                  <h3>System for future entries.</h3>
+                  <p>
+                    The page was designed not only for one story, but as a reusable format for future archive entries.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-section" id="media">
+            <div class="project-section-heading">
+              <div class="section-label">Media</div>
+              <h2>Images, frames, and visual sequence.</h2>
+            </div>
+
+            <figure class="project-figure project-figure-large">
+              <img
+                src="https://picsum.photos/seed/euijoo-project-1/1400/900"
+                alt="Project figure one"
+                width="1400"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>A full-width image or still frame can create a pause in the reading rhythm.</figcaption>
+            </figure>
+
+            <div class="project-media-grid">
+              <figure class="project-figure">
+                <img
+                  src="https://picsum.photos/seed/euijoo-project-2/900/1100"
+                  alt="Project figure two"
+                  width="900"
+                  height="1100"
+                  loading="lazy"
+                />
+                <figcaption>Portrait-oriented images work well for notes, posters, spreads, and vertical frames.</figcaption>
+              </figure>
+
+              <figure class="project-figure">
+                <img
+                  src="https://picsum.photos/seed/euijoo-project-3/900/1100"
+                  alt="Project figure three"
+                  width="900"
+                  height="1100"
+                  loading="lazy"
+                />
+                <figcaption>Two-up layouts help compare variations, process, or movement across a sequence.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="project-section" id="notes">
+            <div class="project-section-heading">
+              <div class="section-label">Notes</div>
+              <h2>Short writing inside the project.</h2>
+            </div>
+
+            <div class="project-pullquote">
+              <p>
+                A project page should not only prove that something was made, but explain how it was seen, edited, and arranged.
+              </p>
+            </div>
+
+            <div class="project-prose" id="project-notes-text">
+              <p>
+                This section can hold small observations, working captions, behind-the-scenes notes, or reflections that do not need
+                to become standalone journal entries.
+              </p>
+            </div>
+          </section>
+
+          <section class="project-section" id="credits">
+            <div class="project-section-heading">
+              <div class="section-label">Credits</div>
+              <h2>People, tools, and acknowledgements.</h2>
+            </div>
+
+            <div class="project-credits-grid">
+              <div class="project-fact">
+                <span>Credits</span>
+                <strong id="project-credits">Euijoo — concept, design, development</strong>
+              </div>
+              <div class="project-fact">
+                <span>Tools</span>
+                <strong id="project-tools">HTML, CSS, JavaScript, Archive System</strong>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p id="footer-brand">euijoo archive</p>
+      <p id="footer-tagline">Editorial Portfolio + Personal Archive</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
