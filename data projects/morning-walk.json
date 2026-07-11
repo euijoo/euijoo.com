@@ -1,1 +1,53 @@
+{
+  "id": "morning-walk",
 
+  "title": "Morning Walk",
+
+  "subtitle": "Finding quiet moments in familiar places.",
+
+  "category": "Photography",
+
+  "year": "2026",
+
+  "client": "Personal Project",
+
+  "location": "Seoul, Korea",
+
+  "cover": "assets/images/projects/morning-walk/cover.jpg",
+
+  "hero": "assets/images/projects/morning-walk/hero.jpg",
+
+  "gallery": [
+    "assets/images/projects/morning-walk/01.jpg",
+    "assets/images/projects/morning-walk/02.jpg",
+    "assets/images/projects/morning-walk/03.jpg"
+  ],
+
+  "video": "",
+
+  "credits": {
+    "photography": "Euijoo",
+    "design": "Euijoo",
+    "writing": "Euijoo"
+  },
+
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Morning Walk is an editorial photography project documenting ordinary landscapes through quiet observation."
+    },
+    {
+      "type": "paragraph",
+      "text": "Rather than chasing spectacular scenes, the project focuses on familiar streets, changing light, and everyday rhythm."
+    }
+  ],
+
+  "tags": [
+    "Photography",
+    "Editorial",
+    "Documentary",
+    "Personal"
+  ],
+
+  "published": "2026-07-11"
+}
