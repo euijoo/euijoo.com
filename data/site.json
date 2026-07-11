@@ -1,86 +1,37 @@
 {
-  "site": {
-    "name": "EUJOO",
-    "url": "https://euijoo.github.io/euijoo.com",
-    "language": "ko",
-    "timezone": "Asia/Seoul",
-    "version": "1.0.0"
-  },
-
-  "branding": {
-    "logo": "EUJOO",
-    "tagline": "Living quietly, making images.",
-    "description": "Editorial portfolio documenting photography, filmmaking, design and writing.",
-    "copyright": "© 2026 EUJOO. All rights reserved."
-  },
-
+  "brand": "euijoo archive",
+  "tagline": "Editorial Portfolio + Personal Archive",
   "hero": {
-    "title": "Living quietly,\nmaking images.",
-    "subtitle": "Photography · Film · Design",
-    "description": "A curated archive of photographs, films, design projects and journal entries documenting everyday moments.",
-    "image": "assets/images/hero/hero.jpg",
-    "primaryButton": {
-      "label": "View Work",
-      "link": "work.html"
-    },
-    "secondaryButton": {
-      "label": "Journal",
-      "link": "journal.html"
-    }
+    "eyebrow": "Editorial Portfolio + Personal Archive",
+    "title": "A place for works, notes, images, travel, and process.",
+    "description": "This is not a feed and not a gallery. It is an evolving archive built to hold photographs, films, design, writing, travel, daily fragments, and working notes in a slower editorial rhythm."
   },
-
-  "featured": {
-    "project": "morning-walk",
-    "journal": "first-story"
+  "featuredSection": {
+    "title": "A lead story, not a thumbnail.",
+    "description": "The first entry point should feel like the opening spread of a magazine: one selected narrative, enough space to read, and one clear path inward."
   },
-
-  "navigation": [
-    {
-      "label": "Work",
-      "url": "work.html"
-    },
-    {
-      "label": "Journal",
-      "url": "journal.html"
-    },
-    {
-      "label": "About",
-      "url": "about.html"
-    },
-    {
-      "label": "Contact",
-      "url": "contact.html"
-    }
-  ],
-
-  "social": {
-    "instagram": "",
-    "youtube": "",
-    "vimeo": "",
-    "github": "https://github.com/euijoo",
-    "email": ""
+  "about": {
+    "preview": [
+      "Euijoo is a developer and creative practitioner based in Seoul, building digital projects across web, media, interface, image, and writing.",
+      "The site is designed as an editorial archive rather than a portfolio wall, so the work can be arranged by story, medium, sequence, and time."
+    ]
   },
-
-  "seo": {
-    "title": "EUJOO",
-    "description": "Editorial portfolio of photographer, filmmaker and designer Euijoo.",
-    "keywords": [
-      "photography",
-      "photographer",
-      "filmmaker",
-      "design",
-      "portfolio",
-      "editorial",
-      "journal"
-    ],
-    "themeColor": "#F6F3EF",
-    "ogImage": "assets/images/hero/hero.jpg"
-  },
-
-  "settings": {
-    "darkMode": true,
-    "animations": true,
-    "lazyLoading": true,
-    "smoothScroll": true
+  "contact": {
+    "heading": "For commissions, collaborations, and conversations.",
+    "description": "Keep the contact area short and calm. One or two reliable paths are enough when the rest of the site already explains the tone of the work.",
+    "links": [
+      {
+        "label": "hello@euijoo.com",
+        "href": "mailto:hello@euijoo.com"
+      },
+      {
+        "label": "About the archive",
+        "href": "about.html"
+      },
+      {
+        "label": "Open contact page",
+        "href": "contact.html"
+      }
+    ]
   }
 }
