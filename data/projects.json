@@ -1,0 +1,15 @@
+{
+  "featured": "morning-walk",
+
+  "projects": [
+    {
+      "id": "morning-walk",
+      "title": "Morning Walk",
+      "category": "Photography",
+      "year": "2026",
+      "cover": "assets/images/projects/morning-walk/cover.jpg",
+      "url": "project/index.html?id=morning-walk"
+    }
+
+  ]
+}
