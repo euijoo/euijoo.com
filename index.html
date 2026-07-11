@@ -12,480 +12,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root,
-    [data-theme="light"] {
-      --bg: #f5f2eb;
-      --bg-soft: #f0ece4;
-      --surface: #fbf8f2;
-      --line: #d9d1c5;
-      --text: #171512;
-      --muted: #6e675d;
-      --accent: #1f4b45;
-      --accent-soft: #d9e4df;
-
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'Inter', Arial, sans-serif;
-
-      --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.82rem);
-      --text-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
-      --text-base: clamp(1rem, 0.97rem + 0.2vw, 1.08rem);
-      --text-lg: clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
-      --text-xl: clamp(1.8rem, 1.2rem + 1.5vw, 2.8rem);
-      --text-2xl: clamp(2.5rem, 1.3rem + 3vw, 4.8rem);
-
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-8: 2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-
-      --content: 1240px;
-      --reading: 68ch;
-    }
-
-    [data-theme="dark"] {
-      --bg: #121110;
-      --bg-soft: #181715;
-      --surface: #1c1b19;
-      --line: #34312c;
-      --text: #f3efe8;
-      --muted: #a29a90;
-      --accent: #87a89f;
-      --accent-soft: #22312d;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      border: 0;
-      background: none;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-    }
-
-    .container {
-      width: min(var(--content), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: color-mix(in srgb, var(--bg) 88%, transparent);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      min-height: 72px;
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      align-items: center;
-      gap: var(--space-4);
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.85rem;
-      font-size: var(--text-sm);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand-mark {
-      width: 28px;
-      height: 28px;
-      border: 1px solid currentColor;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-    }
-
-    .brand-mark svg {
-      width: 15px;
-      height: 15px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      font-size: var(--text-sm);
-    }
-
-    .nav a {
-      position: relative;
-      padding: 0.25rem 0;
-      color: var(--muted);
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: var(--text);
-    }
-
-    .theme-toggle {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      background: var(--surface);
-    }
-
-    .theme-toggle:hover,
-    .theme-toggle:focus-visible {
-      border-color: var(--text);
-    }
-
-    .hero {
-      padding: clamp(4rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: var(--space-12);
-      align-items: end;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: var(--space-4);
-      font-size: var(--text-xs);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h1, h2, h3 {
-      font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-      font-family: var(--font-display);
-    }
-
-    h1 {
-      max-width: 11ch;
-      font-size: var(--text-2xl);
-    }
-
-    .hero-copy {
-      max-width: 34ch;
-      color: var(--muted);
-      font-size: var(--text-lg);
-    }
-
-    .section {
-      padding: clamp(3rem, 7vw, 6rem) 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: var(--space-8);
-      margin-bottom: var(--space-10);
-      align-items: start;
-    }
-
-    .section-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-top: 0.3rem;
-    }
-
-    .section-title-wrap h2 {
-      font-size: var(--text-xl);
-      margin-bottom: var(--space-3);
-    }
-
-    .section-title-wrap p {
-      max-width: 56ch;
-      color: var(--muted);
-    }
-
-    .featured-card {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      min-height: 560px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-    }
-
-    .featured-media {
-      min-height: 100%;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.22)),
-        url('https://picsum.photos/seed/euijoo-archive-1/1200/1400') center/cover;
-    }
-
-    .featured-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      gap: var(--space-10);
-    }
-
-    .meta {
-      font-size: var(--text-xs);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .featured-body h3 {
-      font-size: clamp(2rem, 1.5rem + 1.6vw, 3.5rem);
-      max-width: 10ch;
-      margin: 0.5rem 0 1rem;
-    }
-
-    .featured-body p {
-      max-width: 34ch;
-      color: var(--muted);
-    }
-
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: var(--text-sm);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .text-link::after {
-      content: "↗";
-      font-size: 0.95em;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
-    }
-
-    .archive-card {
-      border-top: 1px solid var(--text);
-      padding-top: var(--space-4);
-    }
-
-    .archive-thumb {
-      aspect-ratio: 4 / 5;
-      margin-bottom: var(--space-4);
-      background: var(--bg-soft);
-      overflow: hidden;
-    }
-
-    .archive-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.92) contrast(1.02);
-    }
-
-    .archive-card h3 {
-      font-size: var(--text-lg);
-      margin: 0.35rem 0 0.6rem;
-    }
-
-    .archive-card p,
-    .journal-item p,
-    .about-grid p,
-    .contact-grid p {
-      color: var(--muted);
-    }
-
-    .journal-list {
-      display: grid;
-      gap: var(--space-4);
-    }
-
-    .journal-item {
-      display: grid;
-      grid-template-columns: 180px 1fr auto;
-      gap: var(--space-6);
-      align-items: start;
-      padding: var(--space-4) 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .journal-item:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .journal-date,
-    .journal-type {
-      font-size: var(--text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-    }
-
-    .journal-item h3 {
-      font-size: var(--text-lg);
-      margin-bottom: 0.4rem;
-    }
-
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-8);
-    }
-
-    .about-grid p,
-    .contact-grid p {
-      max-width: var(--reading);
-    }
-
-    .contact-links {
-      display: grid;
-      gap: var(--space-3);
-      font-size: var(--text-lg);
-    }
-
-    .contact-links a {
-      width: fit-content;
-      border-bottom: 1px solid transparent;
-    }
-
-    .contact-links a:hover,
-    .contact-links a:focus-visible {
-      border-color: currentColor;
-    }
-
-    .site-footer {
-      padding: var(--space-8) 0 var(--space-10);
-      font-size: var(--text-sm);
-      color: var(--muted);
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: var(--space-4);
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .featured-card,
-      .section-heading,
-      .about-grid,
-      .contact-grid,
-      .journal-item {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-3 {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .section-label {
-        padding-top: 0;
-      }
-
-      .featured-card {
-        min-height: auto;
-      }
-
-      .featured-media {
-        min-height: 420px;
-      }
-
-      .journal-item {
-        gap: var(--space-3);
-      }
-    }
-
-    @media (max-width: 720px) {
-      .header-inner {
-        grid-template-columns: 1fr auto;
-      }
-
-      .nav {
-        grid-column: 1 / -1;
-        padding-bottom: 0.85rem;
-        overflow-x: auto;
-      }
-
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        font-size: var(--text-base);
-      }
-
-      .featured-media {
-        min-height: 300px;
-      }
-
-      .featured-body h3 {
-        max-width: 100%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="euijoo home">
+      <a class="brand" href="index.html" aria-label="euijoo home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
             <path d="M5 5h14v14H5z"></path>
             <path d="M9 9h6v6H9z"></path>
           </svg>
         </span>
-        <span>euijoo archive</span>
+        <span id="site-brand-text">euijoo archive</span>
       </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" aria-label="Primary" id="primary-nav">
         <a href="#featured">Featured</a>
         <a href="#works">Works</a>
         <a href="#journal">Journal</a>
@@ -502,19 +46,19 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Editorial Portfolio + Personal Archive</span>
-          <h1>
+          <span class="eyebrow" id="hero-eyebrow">Editorial Portfolio + Personal Archive</span>
+          <h1 id="hero-title">
             A place for works,
             notes, images,
             travel, and process.
           </h1>
         </div>
 
-        <p class="hero-copy">
+        <p class="hero-copy" id="hero-description">
           This is not a feed and not a gallery. It is an evolving archive built to hold
           photographs, films, design, writing, travel, daily fragments, and working notes
           in a slower editorial rhythm.
@@ -527,29 +71,27 @@
         <div class="section-heading">
           <div class="section-label">Featured Story</div>
           <div class="section-title-wrap">
-            <h2>A lead story, not a thumbnail.</h2>
-            <p>
-              The first entry point should feel like the opening spread of a magazine:
-              one selected narrative, enough space to read, and one clear path inward.
+            <h2 id="featured-section-title">A lead story, not a thumbnail.</h2>
+            <p id="featured-section-description">
+              The first entry point should feel like the opening spread of a magazine.
             </p>
           </div>
         </div>
 
-        <article class="featured-card">
-          <div class="featured-media" aria-hidden="true"></div>
+        <article class="featured-card" id="featured-card">
+          <div class="featured-media" id="featured-media" aria-hidden="true"></div>
 
           <div class="featured-body">
             <div>
-              <div class="meta">Project / Film / Writing / Seoul</div>
-              <h3>Building an archive from fragments of work and daily life.</h3>
-              <p>
+              <div class="meta" id="featured-meta">Project / Film / Writing / Seoul</div>
+              <h3 id="featured-title">Building an archive from fragments of work and daily life.</h3>
+              <p id="featured-summary">
                 A long-form project entry can hold images, embedded video, field notes,
-                sketches, dates, locations, and process records together without turning
-                everything into the same kind of post.
+                sketches, dates, locations, and process records together.
               </p>
             </div>
 
-            <a class="text-link" href="project/index.html">Open story</a>
+            <a class="text-link" id="featured-link" href="project/index.html">Open story</a>
           </div>
         </article>
       </div>
@@ -568,52 +110,7 @@
           </div>
         </div>
 
-        <div class="grid-3">
-          <article class="archive-card">
-            <div class="archive-thumb">
-              <img
-                src="https://picsum.photos/seed/euijoo-work-1/900/1100"
-                alt="Editorial project cover"
-                width="900"
-                height="1100"
-                loading="lazy"
-              />
-            </div>
-            <div class="meta">Design / Interface</div>
-            <h3>Streaming interfaces and visual pacing.</h3>
-            <p>Digital product work presented with context, not just screens.</p>
-          </article>
-
-          <article class="archive-card">
-            <div class="archive-thumb">
-              <img
-                src="https://picsum.photos/seed/euijoo-work-2/900/1100"
-                alt="Photography project cover"
-                width="900"
-                height="1100"
-                loading="lazy"
-              />
-            </div>
-            <div class="meta">Photography / Travel</div>
-            <h3>Images gathered through movement and place.</h3>
-            <p>Travel and daily observation can live beside commissioned work.</p>
-          </article>
-
-          <article class="archive-card">
-            <div class="archive-thumb">
-              <img
-                src="https://picsum.photos/seed/euijoo-work-3/900/1100"
-                alt="Writing and journal project cover"
-                width="900"
-                height="1100"
-                loading="lazy"
-              />
-            </div>
-            <div class="meta">Writing / Archive</div>
-            <h3>Essays, captions, notes, and process records.</h3>
-            <p>Short text and long text should share the same editorial language.</p>
-          </article>
-        </div>
+        <div class="grid-3" id="works-grid"></div>
       </div>
     </section>
 
@@ -630,34 +127,7 @@
           </div>
         </div>
 
-        <div class="journal-list">
-          <article class="journal-item">
-            <div class="journal-date">July 2026</div>
-            <div>
-              <h3>On building a portfolio that reads like a publication.</h3>
-              <p>The archive needs pacing, hierarchy, and recurring formats more than visual noise.</p>
-            </div>
-            <div class="journal-type">Essay</div>
-          </article>
-
-          <article class="journal-item">
-            <div class="journal-date">June 2026</div>
-            <div>
-              <h3>Travel images, contact sheets, and location-based memory.</h3>
-              <p>Not every image belongs in a gallery; some belong inside a sequence and a date.</p>
-            </div>
-            <div class="journal-type">Travel</div>
-          </article>
-
-          <article class="journal-item">
-            <div class="journal-date">May 2026</div>
-            <div>
-              <h3>Working notes from interface experiments and visual edits.</h3>
-              <p>Process logs can be concise and still feel composed when the system is consistent.</p>
-            </div>
-            <div class="journal-type">Process</div>
-          </article>
-        </div>
+        <div class="journal-list" id="journal-list"></div>
       </div>
     </section>
 
@@ -671,13 +141,11 @@
         </div>
 
         <div class="about-grid">
-          <p>
-            Euijoo is a developer and creative practitioner based in Seoul, building digital
-            projects across web, media, interface, image, and writing.
+          <p id="about-preview-text-1">
+            Euijoo is a developer and creative practitioner based in Seoul.
           </p>
-          <p>
-            The site is designed as an editorial archive rather than a portfolio wall, so the
-            work can be arranged by story, medium, sequence, and time.
+          <p id="about-preview-text-2">
+            The site is designed as an editorial archive rather than a portfolio wall.
           </p>
         </div>
       </div>
@@ -688,21 +156,16 @@
         <div class="section-heading">
           <div class="section-label">Contact</div>
           <div class="section-title-wrap">
-            <h2>For commissions, collaborations, and conversations.</h2>
+            <h2 id="contact-heading">For commissions, collaborations, and conversations.</h2>
           </div>
         </div>
 
         <div class="contact-grid">
-          <p>
-            Keep the contact area short and calm. One or two reliable paths are enough when the
-            rest of the site already explains the tone of the work.
+          <p id="contact-description">
+            Keep the contact area short and calm.
           </p>
 
-          <div class="contact-links">
-            <a href="mailto:hello@euijoo.com">hello@euijoo.com</a>
-            <a href="about.html">Read more about the archive</a>
-            <a href="contact.html">Open contact page</a>
-          </div>
+          <div class="contact-links" id="contact-links"></div>
         </div>
       </div>
     </section>
@@ -710,24 +173,11 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>euijoo archive</p>
-      <p>Editorial Portfolio + Personal Archive</p>
+      <p id="footer-brand">euijoo archive</p>
+      <p id="footer-tagline">Editorial Portfolio + Personal Archive</p>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const toggle = document.querySelector("[data-theme-toggle]");
-      let theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
-      root.setAttribute("data-theme", theme);
-
-      toggle.addEventListener("click", () => {
-        theme = theme === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", theme);
-      });
-    })();
-  </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
